@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.github.maximpestryakov.kotlin_plugin_bug_reproduction"
+        minSdkVersion 19
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    buildTypes {
+        debug {
+            matchingFallbacks = ['release']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':core')
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.41'
+}
